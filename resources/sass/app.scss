@@ -1,0 +1,17 @@
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Font awesome
+@import './../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import './../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import './../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+
+//Autres
+@import 'flaticon';
+@import 'magnific-popup';
+// @import 'owl.carousel';
+
+// Variables
+@import 'variables';
+//Style
+@import 'style';
