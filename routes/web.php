@@ -31,3 +31,9 @@ Route::get('/blog.html', function () {
 Route::get('/contact.html', function () {
     return view('index_contact');
 });
+
+Route::get('/elements.html', function () {
+    return view('index_elements');
+});
+
+Route::get('/admin', function(){return view ('admin.index');});
