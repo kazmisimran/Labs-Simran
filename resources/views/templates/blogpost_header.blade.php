@@ -19,13 +19,14 @@
 			<ul class="menu-list">
 				<li><a href="home.html">Home</a></li>
 				<li><a href="services.html">Services</a></li>
-				<li><a href="blog.html">Blog</a></li>
+				<li class="active"><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
-				<li class="active"><a href="elements.html">Elements</a></li>
+				<li><a href="elements.html">Elements</a></li>
 			</ul>
 		</nav>
 	</header>
 	<!-- Header section end -->
+
 
 
 

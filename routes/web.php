@@ -28,6 +28,10 @@ Route::get('/blog.html', function () {
     return view('index_blog');
 });
 
+Route::get('/blog-post.html', function () {
+    return view('index_blogpost');
+});
+
 Route::get('/contact.html', function () {
     return view('index_contact');
 });
