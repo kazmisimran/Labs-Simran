@@ -15,7 +15,7 @@
     
     @include('templates.newsletter')
     
-    @include('templates.services_contact')
+    @include('templates.contact')
 
     @include('templates.footer')
 

@@ -9387,9 +9387,9 @@ __webpack_require__(/*! ./bootstrap.min.js */ "./resources/js/bootstrap.min.js")
 
 __webpack_require__(/*! ./magnific-popup.min.js */ "./resources/js/magnific-popup.min.js");
 
-__webpack_require__(/*! ./owl.carousel.min.js */ "./resources/js/owl.carousel.min.js");
-
 __webpack_require__(/*! ./circle-progress.min.js */ "./resources/js/circle-progress.min.js");
+
+__webpack_require__(/*! ./owl.carousel.min.js */ "./resources/js/owl.carousel.min.js");
 
 __webpack_require__(/*! ./map.js */ "./resources/js/map.js");
 

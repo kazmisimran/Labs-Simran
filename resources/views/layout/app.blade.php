@@ -33,6 +33,7 @@
 <body>
 
 	@yield('content')
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
 
 
 	{{-- <!--====== Javascripts & Jquery ======-->
