@@ -9,7 +9,7 @@
 
     @include('templates.contact_map')
     
-    @include('templates.contact')
+    @include('templates.contactform')
 
     @include('templates.footer')
 

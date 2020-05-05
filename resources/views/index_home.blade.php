@@ -17,7 +17,7 @@
     
     @include('templates.home_promotion')
 
-    @include('templates.contact')
+    @include('templates.contactform')
 
     @include('templates.footer')
 
