@@ -265,7 +265,7 @@ ul {
 }
 
 .header-section .logo {
-	display: inline-block;
+	display: block;
 	float: left;
 	padding-top: 30px;
 }
@@ -409,7 +409,7 @@ ul {
 	left: 0;
 	top: 0;
 	z-index: 3;
-	background-image: url("../img/overlay.png");
+	background-image: url("./img/overlay.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -520,7 +520,7 @@ ul {
 
 .test-overlay {
 	position: absolute;
-	background-image: url("../img/test-man.png");
+	background-image: url("./img/test-man.png");
 	background-repeat: no-repeat;
 	background-position: bottom right;
 	background-size: contain;
@@ -1190,7 +1190,7 @@ ul {
 }
 
 .widget-item ul.tag li {
-	display: inline-block;
+	display: block;
 	background: #2be6ab;
 	padding: 10px 24px;
 	float: left;

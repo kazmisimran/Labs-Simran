@@ -1,17 +1,15 @@
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import 'bootstrap.min';
 
 // Font awesome
-@import './../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import './../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
-@import './../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
-
-//Autres
-@import 'flaticon';
-@import 'magnific-popup';
-// @import 'owl.carousel';
-
-// Variables
+// @import './../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+// @import './../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+// @import './../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
 @import 'variables';
-//Style
-@import 'style';
+
+@import './bootstrap.min.scss';
+@import './font-awesome.min.scss';
+@import './flaticon.scss';
+@import './magnific-popup.scss';
+@import './owl.carousel.scss';
+@import './style.scss';

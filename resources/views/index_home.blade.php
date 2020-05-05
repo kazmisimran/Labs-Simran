@@ -1,6 +1,7 @@
-@extends('layout.app_home')
+@extends('layout.app')
 
 @section('content')
+
 
     @include('templates.home_header')
 
@@ -18,7 +19,7 @@
 
     @include('templates.home_contact')
 
-    @include('templates.home_footer')
+    @include('templates.footer')
 
 @endsection
 
