@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Homemenu;
 use App\Carousel;
+use App\Logocarousel;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +46,9 @@ Route::get('/admin', function(){return view ('admin.index');})->name('admin.inde
 Route::get('/' , function () {
     $homemenu=Homemenu::find(1);
     $carousels=Carousel::all();
+    $logocarousel=Logocarousel::find(1);
 
-    return view('index_home' , compact('homemenu','carousels'));
+    return view('index_home' , compact('homemenu','carousels','logocarousel'));
 });
 
 //Homemenu
@@ -57,4 +59,11 @@ Route::post('admin/home/homemenu' , 'HomemenuController@update')->name('homemenu
 //Carousels
 
 Route::resource('admin/home/carousel' , 'CarouselController');
+
+//Logocarousel
+Route::get('admin/home/logocarousel' , 'LogocarouselController@edit');
+
+Route::post('admin/home/logocarousel' , 'LogocarouselController@update')->name('logocarousel.update');
+
+
 
