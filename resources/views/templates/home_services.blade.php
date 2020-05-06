@@ -1,3 +1,5 @@
+@if(count($homeservices)==0)
+
 	<!-- Services section -->
 	<div class="services-section spad">
 		<div class="container">
@@ -120,3 +122,32 @@
 		</div>
 	</div>
 	<!-- services section end -->
+@else 
+<div class="services-section spad">
+	<div class="container">
+		<div class="section-title dark">
+			<h2>Get in <span>the Lab</span> and see the services</h2>
+		</div>
+		<div class="row">
+			@foreach ($homeservices as $homeservice)
+			<!-- single service -->
+			<div class="col-md-4 col-sm-6">
+				<div class="service">
+					<div class="icon">
+						<i class="flaticon-023-flask"></i>
+					</div>
+					<div class="service-text">
+						<h2>Get in the lab</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		@endforeach
+		<div class="text-center">
+			<a href="" class="site-btn">Browse</a>
+		</div>
+	</div>
+</div>
+@endif

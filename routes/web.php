@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Homemenu;
 use App\Carousel;
 use App\Logocarousel;
+use App\Homeservice;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +48,9 @@ Route::get('/' , function () {
     $homemenu=Homemenu::find(1);
     $carousels=Carousel::all();
     $logocarousel=Logocarousel::find(1);
+    $homeservices=Homeservice::all();
 
-    return view('index_home' , compact('homemenu','carousels','logocarousel'));
+    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices'));
 });
 
 //Homemenu
@@ -65,5 +67,8 @@ Route::get('admin/home/logocarousel' , 'LogocarouselController@edit');
 
 Route::post('admin/home/logocarousel' , 'LogocarouselController@update')->name('logocarousel.update');
 
+//Homeservice
+
+Route::resource('admin/home/homeservice' , 'HomeserviceController');
 
 
