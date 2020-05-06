@@ -134,11 +134,11 @@
 			<div class="col-md-4 col-sm-6">
 				<div class="service">
 					<div class="icon">
-						<i class="flaticon-023-flask"></i>
+						<i class="{{$homeservice->icon}}"></i>
 					</div>
 					<div class="service-text">
-						<h2>Get in the lab</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+					<h2>{{$homeservice->title}}</h2>
+						<p>{{$homeservice->description}}</p>
 					</div>
 				</div>
 			</div>

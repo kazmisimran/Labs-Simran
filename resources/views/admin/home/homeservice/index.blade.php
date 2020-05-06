@@ -1,9 +1,12 @@
 @extends('adminlte::page')
 
+@section('css')
+<link  href="{{asset('css/flaticon.css')}}" rel="stylesheet">
+@endsection
+
 @section('content')
 
 
-<h1 class="container my-4 text-primary text-center">Dashboard Admin</h1>
 
 
 <div class="container d-flex">
@@ -25,7 +28,7 @@
       <tr>
       <td>{{$service->title}}</td>
       <td>{{$service->description}}</td>
-      <td>{{$service->icon}}</td>
+      <td><i class="{{$service->icon}}"></i></td>
       <td>
         <a href="{{route('homeservice.edit' , $service->id)}}" class='btn btn-warning text-white'>Edit</a>
         <form action="{{route('homeservice.destroy' , $service->id)}}" method="post">
