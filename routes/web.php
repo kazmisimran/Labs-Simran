@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Homemenu;
+use App\Carousel;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +44,9 @@ Route::get('/admin', function(){return view ('admin.index');})->name('admin.inde
 
 Route::get('/' , function () {
     $homemenu=Homemenu::find(1);
+    $carousels=Carousel::all();
 
-    return view('index_home' , compact('homemenu'));
+    return view('index_home' , compact('homemenu','carousels'));
 });
 
 //Homemenu
@@ -53,3 +55,6 @@ Route::get('admin/home/homemenu' , 'HomemenuController@edit');
 Route::post('admin/home/homemenu' , 'HomemenuController@update')->name('homemenu.update');
 
 //Carousels
+
+Route::resource('admin/home/carousel' , 'CarouselController');
+
