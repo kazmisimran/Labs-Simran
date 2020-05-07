@@ -129,25 +129,29 @@
 			<h2>Get in <span>the Lab</span> and see the services</h2>
 		</div>
 		<div class="row">
-			@foreach ($homeservices as $homeservice)
 			<!-- single service -->
+			@foreach ($homeservices as $homeservice)
 			<div class="col-md-4 col-sm-6">
 				<div class="service">
 					<div class="icon">
 						<i class="{{$homeservice->icon}}"></i>
 					</div>
 					<div class="service-text">
-					<h2>{{$homeservice->title}}</h2>
+						<h2>{{$homeservice->title}}</h2>
 						<p>{{$homeservice->description}}</p>
 					</div>
 				</div>
 			</div>
-			
+			@endforeach
 		</div>
-		@endforeach
+		<div class="text-center text-dark">
+			{{$homeservices->links()}}			
+		</div>
 		<div class="text-center">
 			<a href="" class="site-btn">Browse</a>
 		</div>
 	</div>
 </div>
+
 @endif
+

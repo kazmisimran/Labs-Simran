@@ -276,7 +276,8 @@ return [
         ],
         ['header' => 'labels'],
         [
-            'text'       => 'important',
+            'text'       => 'Home',
+            'url'        => 'admin/home',
             'icon_color' => 'red',
         ],
         [

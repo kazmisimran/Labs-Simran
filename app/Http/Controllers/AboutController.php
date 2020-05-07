@@ -3,17 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Homeservice;
+use App\About;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
 
-
-
-
-
-
-
-class HomeserviceController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,13 +15,8 @@ class HomeserviceController extends Controller
      */
     public function index()
     {
-        $homeservices=Homeservice::all();
-
-        return view('admin.home.homeservice.index' , compact('homeservices'));
-
+        //
     }
-
-   
 
     /**
      * Show the form for creating a new resource.
@@ -37,9 +25,7 @@ class HomeserviceController extends Controller
      */
     public function create()
     {
-        
-        return view('admin.home.homeservice.create');
-
+        //
     }
 
     /**
@@ -50,14 +36,7 @@ class HomeserviceController extends Controller
      */
     public function store(Request $request)
     {
-        $homeservice = new Homeservice();
-        $homeservice->title = request('title');
-        $homeservice->description = request('description');
-        $homeservice->icon = request('icon');
-
-        $homeservice->save();
-        return redirect()->route('homeservice.index');
-
+        //
     }
 
     /**
@@ -77,11 +56,11 @@ class HomeserviceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $homeservice=Homeservice::find($id);
+        $about= About::find(1);
 
-        return view('admin.home.homeservice.edit', compact('homeservice')) ;
+        return view('admin.home.about.index',compact('about')) ;
 
     }
 
@@ -92,20 +71,28 @@ class HomeserviceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $homeservice=Homeservice::find($id);
-        if($homeservice!=null){
-            Storage::delete($homeservice->img_path);
-            $homeservice->title = request('title');
-            $homeservice->description = request('description');
-            $homeservice->icon=request('icon');
-    
+        $about = About::find(1);
+       
+        if(empty($about)){
+            $about=new About();
+            $about->title=request('title');
+            $about->text1=request('text1');
+            $about->text2=request('text2');
+            $about->button=request('button');
+            $about->link=request('link');
+            $about->save();
+            return redirect()->route('admin.index');
+        }else{
+            $about->title=request('title');
+            $about->text1=request('text1');
+            $about->text2=request('text2');
+            $about->button=request('button');
+            $about->link=request('link');
+            $about->save();
+            return redirect()->route('admin.index');
         }
-
-        $homeservice->save();
-        return redirect() ->route('homeservice.index');
-
     }
 
     /**
@@ -116,12 +103,6 @@ class HomeserviceController extends Controller
      */
     public function destroy($id)
     {
-        $homeservice=Homeservice::find($id);
-        Storage::delete($homeservice);
-        $homeservice->delete();
-        return redirect() -> back();
-
+        //
     }
-
-
 }
