@@ -7,6 +7,7 @@ use App\Logocarousel;
 use App\Homeservice;
 use App\About;
 use App\Testimonial;
+use App\Testimonialstitle;
 use Illuminate\Pagination\Paginator;
 
 
@@ -58,8 +59,9 @@ Route::get('/' , function () {
     $homeservices=Homeservice::paginate(9);
     $about=About::find(1);
     $testimonials=Testimonial::all();
+    $testimonialstitle=Testimonialstitle::find(1);
 
-    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials'));
+    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle'));
 });
 
 //Homemenu
@@ -91,6 +93,13 @@ Route::post('admin/home/about' , 'AboutController@update')->name('about.update')
 //Testimonials
 
 Route::resource('admin/home/testimonial' , 'TestimonialController');
+
+//Testimonials title
+
+Route::get('admin/home/testimonialstitle' , 'TestimonialstitleController@edit');
+
+Route::post('admin/home/testimonialstitle' , 'TestimonialstitleController@update')->name('testimonialstitle.update');
+
 
 
 
