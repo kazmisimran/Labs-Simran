@@ -3,6 +3,7 @@
 		<div class="container">
 			<div class="row">
 				<!-- contact info -->
+				@if(empty($contactinfo))
 				<div class="col-md-5 col-md-offset-1 contact-info col-push">
 					<div class="section-title left">
 						<h2>Contact us</h2>
@@ -13,6 +14,18 @@
 					<p class="con-item">0034 37483 2445 322</p>
 					<p class="con-item">hello@company.com</p>
 				</div>
+				@else 
+				<div class="col-md-5 col-md-offset-1 contact-info col-push">
+					<div class="section-title left">
+						<h2>{{$contactinfo->title}}</h2>
+					</div>
+					<p>{{$contactinfo->text}}</p>
+					<h3 class="mt60">Main Office</h3>
+					<p class="con-item">{{$contactinfo->address}} </p>
+					<p class="con-item">{{$contactinfo->phone}}</p>
+					<p class="con-item">{{$contactinfo->email}}</p>
+				</div>
+				@endif
 				<!-- contact form -->
 				<div class="col-md-6 col-pull">
 					<form class="form-class" id="con_form"  action="{{route('contactform.store')}}" method="post">

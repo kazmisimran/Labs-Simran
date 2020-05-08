@@ -10,6 +10,7 @@ use App\Testimonial;
 use App\Testimonialstitle;
 use App\Ready;
 use App\Contactform;
+use App\Contactinfo;
 use Illuminate\Pagination\Paginator;
 
 
@@ -64,8 +65,9 @@ Route::get('/' , function () {
     $testimonialstitle=Testimonialstitle::find(1);
     $ready=Ready::find(1);
     $contactforms=Contactform::all();
+    $contactinfo=Contactinfo::find(1);
 
-    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready'));
+    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready','contactinfo'));
 });
 
 //Homemenu
@@ -117,6 +119,11 @@ Route::resource('admin/home/contactform' , 'ContactformController') ;
 
 Route::post('admin/home/contactform/store', 'ContactformController@store')->name('contactform.store');
 
+//Contact Info
+
+Route::get('admin/home/contactinfo' , 'ContactinfoController@edit')->name('contactinfo');
+
+Route::post('admin/home/contactinfo/store', 'ContactinfoController@update')->name('contactinfo.update');
 
 
 

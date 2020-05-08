@@ -63,7 +63,7 @@ class TestimonialController extends Controller
      */
     public function show()
     {
-        $reversed = $testimonials->reverse();
+        $testimonials=Testimonial::orderBy('created_at','desc')->take(1)->get();
         return view('index' , compact('testimonials'));
 
         

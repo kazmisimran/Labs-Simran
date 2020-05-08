@@ -1,4 +1,4 @@
-@if(count($testimonials)<2)
+@if(count($testimonials)==0)
 
 	<!-- Testimonial section -->
 	<div class="testimonial-section pb100">
