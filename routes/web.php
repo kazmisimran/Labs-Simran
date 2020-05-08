@@ -8,6 +8,7 @@ use App\Homeservice;
 use App\About;
 use App\Testimonial;
 use App\Testimonialstitle;
+use App\Ready;
 use Illuminate\Pagination\Paginator;
 
 
@@ -60,8 +61,9 @@ Route::get('/' , function () {
     $about=About::find(1);
     $testimonials=Testimonial::all();
     $testimonialstitle=Testimonialstitle::find(1);
+    $ready=Ready::find(1);
 
-    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle'));
+    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready'));
 });
 
 //Homemenu
@@ -86,7 +88,7 @@ Route::resource('admin/home/homeservice' , 'HomeserviceController');
 
 //About
 
-Route::get('admin/home/about' , 'AboutController@edit');
+Route::get('admin/home/about' , 'AboutController@edit')->name('about');
 
 Route::post('admin/home/about' , 'AboutController@update')->name('about.update');
 
@@ -96,10 +98,17 @@ Route::resource('admin/home/testimonial' , 'TestimonialController');
 
 //Testimonials title
 
-Route::get('admin/home/testimonialstitle' , 'TestimonialstitleController@edit');
+Route::get('admin/home/testimonialstitle' , 'TestimonialstitleController@edit')->name('testimonialstitle');
 
 Route::post('admin/home/testimonialstitle' , 'TestimonialstitleController@update')->name('testimonialstitle.update');
 
+
+//Ready
+
+
+Route::get('admin/home/ready' , 'ReadyController@edit')->name('ready');
+
+Route::post('admin/home/ready' , 'ReadyController@update')->name('ready.update');
 
 
 

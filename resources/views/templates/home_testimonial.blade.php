@@ -6,9 +6,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-4">
+					@if(empty($testimnialstitle))
 					<div class="section-title left">
 						<h2>What our clients say</h2>
 					</div>
+					@else 
+					<div class="section-title left">
+						<h2>{{$testimonialstitle->title}}</h2>
+					</div>
+					@endif
 					<div class="owl-carousel" id="testimonial-slide">
 						<!-- single testimonial -->
 						<div class="testimonial">
@@ -107,12 +113,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-4">
+					@if(empty($testimnialstitle))
+					<div class="section-title left">
+						<h2>What our clients say</h2>
+					</div>
+					@else 
 					<div class="section-title left">
 						<h2>{{$testimonialstitle->title}}</h2>
 					</div>
+					@endif
 					
 					
-					{{-- <div class="owl-carousel" id="testimonial-slide"> --}}
+					<div class="owl-carousel" id="testimonial-slide">
 						<!-- single testimonial -->
 						@foreach ($testimonials as $testimonial)
 						<div class="testimonial">
@@ -129,7 +141,7 @@
 							</div>
 						</div>
 						@endforeach
-					{{-- </div> --}}
+					</div>
 					
 				</div>
 			</div>

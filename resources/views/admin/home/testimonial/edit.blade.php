@@ -19,7 +19,7 @@
     </div>
     <div>
         <label for="" class="w-25">text</label>
-    <input type="text" name='text' id='text' value="{{$testimonial->text}}">
+        <textarea name="text" id="text" value="{{$testimonial->text}}" cols="30" rows="10"></textarea>
     </div>
     <div>
         <label for="" class="w-25">position</label>

@@ -100,7 +100,7 @@
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
 							<img src="img/video.jpg" alt="">
-							<a href="{{asset($about->link)}}" class="video-popup">
+							<a href="{{$about->link}}" class="video-popup">
 								<i class="fa fa-play"></i>
 							</a>
 						</div>
