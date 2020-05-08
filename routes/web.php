@@ -6,7 +6,9 @@ use App\Carousel;
 use App\Logocarousel;
 use App\Homeservice;
 use App\About;
+use App\Testimonial;
 use Illuminate\Pagination\Paginator;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,8 +57,9 @@ Route::get('/' , function () {
     $logocarousel=Logocarousel::find(1);
     $homeservices=Homeservice::paginate(9);
     $about=About::find(1);
+    $testimonials=Testimonial::all();
 
-    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about'));
+    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials'));
 });
 
 //Homemenu
@@ -84,6 +87,11 @@ Route::resource('admin/home/homeservice' , 'HomeserviceController');
 Route::get('admin/home/about' , 'AboutController@edit');
 
 Route::post('admin/home/about' , 'AboutController@update')->name('about.update');
+
+//Testimonials
+
+Route::resource('admin/home/testimonial' , 'TestimonialController');
+
 
 
 
