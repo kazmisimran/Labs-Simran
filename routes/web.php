@@ -11,7 +11,7 @@ use App\Testimonialstitle;
 use App\Ready;
 use App\Contactform;
 use App\Contactinfo;
-use Illuminate\Pagination\Paginator;
+// use Illuminate\Pagination\Paginator;
 
 
 /*
@@ -127,6 +127,10 @@ Route::post('admin/home/contactform/store', 'ContactformController@store')->name
 Route::get('admin/home/contactinfo' , 'ContactinfoController@edit')->name('contactinfo');
 
 Route::post('admin/home/contactinfo/store', 'ContactinfoController@update')->name('contactinfo.update');
+
+//Team
+
+Route::resource('admin/home/team' , 'TeamController');
 
 
 

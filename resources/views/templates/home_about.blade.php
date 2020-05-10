@@ -1,6 +1,3 @@
-
-
-
 	<!-- About section -->
 	<div class="about-section">
 		<div class="overlay"></div>
@@ -55,9 +52,6 @@
 					</div>
 					@endforeach
 				</div>
-
-
-
 				@endif
 			</div>
 		</div>
