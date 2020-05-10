@@ -70,6 +70,7 @@ Route::get('/admin/home', function(){return view ('admin.home.index');});
 //     return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready','contactinfo'));
 // });
 
+//Home
 Route::get('/','WelcomeController@index');
 
 //Homemenu

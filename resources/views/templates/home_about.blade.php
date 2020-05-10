@@ -7,6 +7,7 @@
 		<!-- card section -->
 		<div class="card-section">
 			<div class="container">
+				@if(count($homeservices)==0)
 				<div class="row">
 					<!-- single card -->
 					<div class="col-md-4 col-sm-6">
@@ -39,6 +40,25 @@
 						</div>
 					</div>
 				</div>
+				@else
+				<div class="row">
+					<!-- single card -->
+					@foreach ($homeservices->random(3) as $homeservice)
+					<div class="col-md-4 col-sm-6">
+						<div class="lab-card">
+							<div class="icon">
+								<i class="{{$homeservice->icon}}"></i>
+							</div>
+							<h2>{{$homeservice->title}}</h2>
+							<p>{{$homeservice->description}}</p>
+						</div>
+					</div>
+					@endforeach
+				</div>
+
+
+
+				@endif
 			</div>
 		</div>
 		<!-- card section end-->

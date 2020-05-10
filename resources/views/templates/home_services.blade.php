@@ -144,7 +144,7 @@
 			</div>
 			@endforeach
 		</div>
-		<div class="text-center text-dark">
+		<div class="text-center">
 			{{$homeservices->links()}}			
 		</div>
 		<div class="text-center">
