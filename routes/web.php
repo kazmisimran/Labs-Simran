@@ -55,20 +55,22 @@ Route::get('/admin/home', function(){return view ('admin.home.index');});
 
 // //HOME
 
-Route::get('/' , function () {
-    $homemenu=Homemenu::find(1);
-    $carousels=Carousel::all();
-    $logocarousel=Logocarousel::find(1);
-    $homeservices=Homeservice::paginate(9);
-    $about=About::find(1);
-    $testimonials=Testimonial::all();
-    $testimonialstitle=Testimonialstitle::find(1);
-    $ready=Ready::find(1);
-    $contactforms=Contactform::all();
-    $contactinfo=Contactinfo::find(1);
+// Route::get('/' , function () {
+//     $homemenu=Homemenu::find(1);
+//     $carousels=Carousel::all();
+//     $logocarousel=Logocarousel::find(1);
+//     $homeservices=Homeservice::paginate(9);
+//     $about=About::find(1);
+//     $testimonials=Testimonial::all();
+//     $testimonialstitle=Testimonialstitle::find(1);
+//     $ready=Ready::find(1);
+//     $contactforms=Contactform::all();
+//     $contactinfo=Contactinfo::find(1);
 
-    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready','contactinfo'));
-});
+//     return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready','contactinfo'));
+// });
+
+Route::get('/','WelcomeController@index');
 
 //Homemenu
 Route::get('admin/home/homemenu' , 'HomemenuController@edit')->name('homemenu');

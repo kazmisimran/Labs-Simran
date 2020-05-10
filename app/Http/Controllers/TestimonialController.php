@@ -63,8 +63,8 @@ class TestimonialController extends Controller
      */
     public function show()
     {
-        $testimonials=Testimonial::orderBy('created_at','desc')->take(1)->get();
-        return view('index' , compact('testimonials'));
+        // $testimonials=Testimonial::orderBy('id','desc')->take(6)->get();
+        // return view('index_home' , compact('testimonials'));
 
         
     }

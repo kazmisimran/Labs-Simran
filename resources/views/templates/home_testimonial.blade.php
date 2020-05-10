@@ -126,6 +126,7 @@
 					
 					<div class="owl-carousel" id="testimonial-slide">
 						<!-- single testimonial -->
+						
 						@foreach ($testimonials as $testimonial)
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
