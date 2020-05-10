@@ -38,8 +38,9 @@ class WelcomeController extends Controller
         $contactforms=Contactform::all();
         $contactinfo=Contactinfo::find(1);
         $teams=Team::all();
+        $servs=Homeservice::all();
 
-        return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready','contactinfo','teams'));
+        return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready','contactinfo','teams','servs'));
 
     }
 

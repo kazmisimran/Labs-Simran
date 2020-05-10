@@ -40,14 +40,14 @@
 				@else
 				<div class="row">
 					<!-- single card -->
-					@foreach ($homeservices->random(3) as $homeservice)
+					@foreach ($servs->random(3) as $serv)
 					<div class="col-md-4 col-sm-6">
 						<div class="lab-card">
 							<div class="icon">
-								<i class="{{$homeservice->icon}}"></i>
+								<i class="{{$serv->icon}}"></i>
 							</div>
-							<h2>{{$homeservice->title}}</h2>
-							<p>{{$homeservice->description}}</p>
+							<h2>{{$serv->title}}</h2>
+							<p>{{$serv->description}}</p>
 						</div>
 					</div>
 					@endforeach

@@ -73,6 +73,7 @@ Route::get('/admin/home', function(){return view ('admin.home.index');});
 //Home
 Route::get('/','WelcomeController@index');
 
+
 //Homemenu
 Route::get('admin/home/homemenu' , 'HomemenuController@edit')->name('homemenu');
 
