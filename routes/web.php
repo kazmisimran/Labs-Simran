@@ -26,9 +26,7 @@ use App\Contactinfo;
 */
 
 
-Route::get('/services.html', function () {
-    return view('index_services');
-});
+
 
 Route::get('/blog.html', function () {
     return view('index_blog');
@@ -51,6 +49,7 @@ Route::get('/elements.html', function () {
 
 Route::get('/admin', function(){return view ('admin.index');})->name('admin.index');
 Route::get('/admin/home', function(){return view ('admin.home.index');});
+Route::get('/admin/services', function(){return view ('admin.services.index');});
 
 
 // //HOME
@@ -71,8 +70,7 @@ Route::get('/admin/home', function(){return view ('admin.home.index');});
 // });
 
 //Home
-Route::get('/','WelcomeController@index');
-
+Route::get('/','WelcomeController@index')->name('home');
 
 //Homemenu
 Route::get('admin/home/homemenu' , 'HomemenuController@edit')->name('homemenu');
@@ -134,6 +132,20 @@ Route::post('admin/home/contactinfo/store', 'ContactinfoController@update')->nam
 Route::resource('admin/home/team' , 'TeamController');
 
 
+//Services
+Route::get('/services' , 'ServicesController@index')->name('services');
+
+//Servicesmenu
+
+Route::get('admin/home/servicesmenu' , 'ServicesmenuController@edit')->name('servicesmenu');
+
+Route::post('admin/home/servicesmenu' , 'ServicesmenuController@update')->name('servicesmenu.update');
+
+//Servicesbanner
+
+Route::get('admin/home/servicesbanner' , 'ServicesbannerController@edit')->name('servicesbanner');
+
+Route::post('admin/home/servicesbanner' , 'ServicesbannerController@update')->name('servicesbanner.update');
 
 
 

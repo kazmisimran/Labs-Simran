@@ -281,7 +281,8 @@ return [
             'icon_color' => 'red',
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Services',
+            'url'        => 'admin/services',
             'icon_color' => 'yellow',
         ],
         [

@@ -1,14 +1,13 @@
 @extends('adminlte::page')
 @section('content')
 
+
+
 <div class="container d-flex">
     <a href="{{route('team.create')}}" class='btn btn-dark  my-5'>Ajouter</a>
 </div>
 
-<div class="container my-5">
-    <label for="">Position à garder au centre</label>
-    <input type="text">
-</div>
+
 
 <table class="table container">
     <thead>

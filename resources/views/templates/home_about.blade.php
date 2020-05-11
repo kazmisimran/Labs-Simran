@@ -41,7 +41,7 @@
 				<div class="row">
 					<!-- single card -->
 					@foreach ($servs->random(3) as $serv)
-					<div class="col-md-4 col-sm-6">
+					<div class="col-md-4  @if($loop->last)col-sm-12 @else col-sm-6 @endif">
 						<div class="lab-card">
 							<div class="icon">
 								<i class="{{$serv->icon}}"></i>
