@@ -7,6 +7,8 @@ use App\Servicesmenu;
 use App\Servicesbanner;
 use App\Homeservice;
 use App\Featurestitle;
+use App\Contactform;
+use App\Contactinfo;
 
 class ServicesController extends Controller
 {
@@ -19,8 +21,12 @@ class ServicesController extends Controller
        $featureslefts=$features->take(3);
        $featuresrights=$features->take(-3);
        $featurestitle= Featurestitle::find(1);
+       $contactforms=Contactform::all();
+       $contactinfo=Contactinfo::find(1);
 
-        return view('index_services',compact('servicesmenu','servicesbanner','homeservices','features' ,'featurestitle','featureslefts','featuresrights'));
+
+
+        return view('index_services',compact('servicesmenu','servicesbanner','homeservices','features' ,'featurestitle','featureslefts','featuresrights','contactforms','contactinfo'));
 
     }
 
