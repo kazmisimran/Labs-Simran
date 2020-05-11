@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServicesmenuTable extends Migration
+class CreateContactbannerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateServicesmenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('servicesmenu', function (Blueprint $table) {
+        Schema::create('contactbanner', function (Blueprint $table) {
             $table->id();
-            $table->string('img_path',500);
-            $table->string('lien1',10);
-            $table->string('lien2',10);
-            $table->string('lien3',10);
-            $table->string('lien4',10);
+            $table->string('title');
+            $table->string('bread1');
+            $table->string('bread2');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateServicesmenuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servicesmenu');
+        Schema::dropIfExists('contactbanner');
     }
 }

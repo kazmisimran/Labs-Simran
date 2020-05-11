@@ -113,7 +113,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-4">
-					@if(empty($testimnialstitle))
+					@if(empty($testimonialstitle))
 					<div class="section-title left">
 						<h2>What our clients say</h2>
 					</div>
@@ -125,9 +125,9 @@
 					
 					
 					<div class="owl-carousel" id="testimonial-slide">
+						@foreach ($testimonials as $testimonial)
 						<!-- single testimonial -->
 						
-						@foreach ($testimonials as $testimonial)
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
 							<p>{{$testimonial->text}}</p>

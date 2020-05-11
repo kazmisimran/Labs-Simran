@@ -286,7 +286,8 @@ return [
             'icon_color' => 'yellow',
         ],
         [
-            'text'       => 'information',
+            'text'       => 'Contact',
+            'url'        => 'admin/contact',
             'icon_color' => 'cyan',
         ],
     ],

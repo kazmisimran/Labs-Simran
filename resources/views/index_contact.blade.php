@@ -3,7 +3,7 @@
 @section('content')
 
 
-    @include('templates.contact_header')
+    @include('templates.home_header')
 
     @include('templates.contact_banner')
 

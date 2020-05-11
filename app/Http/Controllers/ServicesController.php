@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Servicesmenu;
+use App\Homemenu;
 use App\Servicesbanner;
 use App\Homeservice;
 use App\Featurestitle;
@@ -14,7 +14,7 @@ class ServicesController extends Controller
 {
     public function index()
     {
-       $servicesmenu = Servicesmenu::find(1);
+        $homemenu = Homemenu::find(1);
        $servicesbanner = Servicesbanner::find(1);
        $homeservices=Homeservice::orderBy('id','desc')->paginate(9);
        $features=Homeservice::orderBy('id', 'desc')->take(6)->get();
@@ -26,7 +26,7 @@ class ServicesController extends Controller
 
 
 
-        return view('index_services',compact('servicesmenu','servicesbanner','homeservices','features' ,'featurestitle','featureslefts','featuresrights','contactforms','contactinfo'));
+        return view('index_services',compact('homemenu','servicesbanner','homeservices','features' ,'featurestitle','featureslefts','featuresrights','contactforms','contactinfo'));
 
     }
 

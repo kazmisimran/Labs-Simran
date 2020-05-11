@@ -11,6 +11,7 @@ use App\Testimonialstitle;
 use App\Ready;
 use App\Contactform;
 use App\Contactinfo;
+use App\Contactmenu;
 // use Illuminate\Pagination\Paginator;
 
 
@@ -36,9 +37,6 @@ Route::get('/blog-post.html', function () {
     return view('index_blogpost');
 });
 
-Route::get('/contact.html', function () {
-    return view('index_contact');
-});
 
 Route::get('/elements.html', function () {
     return view('index_elements');
@@ -50,6 +48,7 @@ Route::get('/elements.html', function () {
 Route::get('/admin', function(){return view ('admin.index');})->name('admin.index');
 Route::get('/admin/home', function(){return view ('admin.home.index');});
 Route::get('/admin/services', function(){return view ('admin.services.index');});
+Route::get('/admin/contact' , function(){return view('admin.contact.index');});
 
 
 // //HOME
@@ -137,9 +136,9 @@ Route::get('/services' , 'ServicesController@index')->name('services');
 
 //Servicesmenu
 
-Route::get('admin/home/servicesmenu' , 'ServicesmenuController@edit')->name('servicesmenu');
+// Route::get('admin/home/servicesmenu' , 'ServicesmenuController@edit')->name('servicesmenu');
 
-Route::post('admin/home/servicesmenu' , 'ServicesmenuController@update')->name('servicesmenu.update');
+// Route::post('admin/home/servicesmenu' , 'ServicesmenuController@update')->name('servicesmenu.update');
 
 //Servicesbanner
 
@@ -149,11 +148,21 @@ Route::post('admin/home/servicesbanner' , 'ServicesbannerController@update')->na
 
 //Features title
 
-
 Route::get('admin/home/featurestitle' , 'FeaturestitleController@edit')->name('featurestitle');
 
 Route::post('admin/home/featurestitle' , 'FeaturestitleController@update')->name('featurestitle.update');
 
+//Contact
+Route::get('/contact' , 'ContactController@index')->name('contact');
 
+//Contactmenu
 
+// Route::get('admin/contact/contactmenu' , 'ContactmenuController@edit')->name('contactmenu');
 
+// Route::post('admin/contact/contactmenu' , 'ContactmenuController@update')->name('contactmenu.update');
+
+//Contactbanner
+
+Route::get('admin/contact/contactbanner' , 'ContactbannerController@edit')->name('contactbanner');
+
+Route::post('admin/contact/contactbanner' , 'ContactbannerController@update')->name('contactbanner.update');

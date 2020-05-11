@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('templates.blog_header')
+    @include('templates.home_header')
 
     @include('templates.blog_banner')
 

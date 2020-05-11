@@ -19,7 +19,7 @@
 				<li class="active"><a href="/">Home</a></li>
 				<li><a href="{{route('services')}}">Services</a></li>
 				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="">Contact</a></li>
 				<li><a href="elements.html">Elements</a></li>
 			</ul>
 		</nav>
@@ -38,7 +38,7 @@
 			<li class="active"><a href="/">Home</a></li>
 			<li><a href="{{route('services')}}">{{$homemenu->lien1}}</a></li>
 			<li><a href="blog.html">{{$homemenu->lien2}}</a></li>
-			<li><a href="contact.html">{{$homemenu->lien3}}</a></li>
+			<li><a href="">{{$homemenu->lien3}}</a></li>
 			<li><a href="elements.html">{{$homemenu->lien4}}</a></li>
 		</ul>
 	</nav>
