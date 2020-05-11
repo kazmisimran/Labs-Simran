@@ -147,5 +147,13 @@ Route::get('admin/home/servicesbanner' , 'ServicesbannerController@edit')->name(
 
 Route::post('admin/home/servicesbanner' , 'ServicesbannerController@update')->name('servicesbanner.update');
 
+//Features title
+
+
+Route::get('admin/home/featurestitle' , 'FeaturestitleController@edit')->name('featurestitle');
+
+Route::post('admin/home/featurestitle' , 'FeaturestitleController@update')->name('featurestitle.update');
+
+
 
 

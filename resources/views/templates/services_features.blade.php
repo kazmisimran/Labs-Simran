@@ -2,11 +2,11 @@
 
 
 	<!-- features section -->
-	<div class="team-section spad">
+	<div class="team-section spad" id="features-section">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="section-title">
-				<h2>Get in <span>the Lab</span> and  discover the world</h2>
+				<h2>{{$featurestitle->title}}</h2>
 			</div>
 			<div class="row">
 				<!-- feature item -->
@@ -81,7 +81,7 @@
 				</div>
 			</div>
 			<div class="text-center mt100">
-				<a href="" class="site-btn">Browse</a>
+				<a href="#card-section" class="site-btn">{{$featurestitle->button}}</a>
 			</div>
 		</div>
 	</div>

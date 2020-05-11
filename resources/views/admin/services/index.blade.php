@@ -6,6 +6,7 @@
     <li><a href="{{route('servicesmenu')}}">Menu</a></li>
     <li><a href="{{route('servicesbanner')}}">Banner</a></li>
     <li><a href="home/homeservice">Services</a></li>
+    <li><a href="{{route('featurestitle')}}">Features</a></li>
 
     {{-- <li><a href="home/carousel">Carousel</a></li>
     <li><a href="home/homeservice">Services</a></li>

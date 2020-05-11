@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Servicesmenu;
 use App\Servicesbanner;
 use App\Homeservice;
+use App\Featurestitle;
 
 class ServicesController extends Controller
 {
@@ -14,8 +15,10 @@ class ServicesController extends Controller
        $servicesmenu = Servicesmenu::find(1);
        $servicesbanner = Servicesbanner::find(1);
        $homeservices=Homeservice::orderBy('id','desc')->paginate(9);
+       $features=Homeservice::orderBy('id', 'desc')->take(6)->get();
+       $featurestitle= Featurestitle::find(1);
 
-        return view('index_services',compact('servicesmenu','servicesbanner','homeservices'));
+        return view('index_services',compact('servicesmenu','servicesbanner','homeservices','features' ,'featurestitle'));
 
     }
 
