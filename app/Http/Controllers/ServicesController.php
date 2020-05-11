@@ -16,9 +16,11 @@ class ServicesController extends Controller
        $servicesbanner = Servicesbanner::find(1);
        $homeservices=Homeservice::orderBy('id','desc')->paginate(9);
        $features=Homeservice::orderBy('id', 'desc')->take(6)->get();
+       $featureslefts=$features->take(3);
+       $featuresrights=$features->take(-3);
        $featurestitle= Featurestitle::find(1);
 
-        return view('index_services',compact('servicesmenu','servicesbanner','homeservices','features' ,'featurestitle'));
+        return view('index_services',compact('servicesmenu','servicesbanner','homeservices','features' ,'featurestitle','featureslefts','featuresrights'));
 
     }
 
