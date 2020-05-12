@@ -36,9 +36,9 @@
 					@if($i==1)
 					<div class="col-sm-4">
 						<div class="member">
-							<img src="{{asset('storage/'.$center[0]->img_path)}}" alt="">
-							<h2>{{$center[0]->name}}</h2>
-							<h3>{{$center[0]->position}}</h3>
+							<img src="{{asset('storage/'.$center->img_path)}}" alt="">
+							<h2>{{$center->name}}</h2>
+							<h3>{{$center->position}}</h3>
 						</div>
 					</div>
 					@else

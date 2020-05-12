@@ -2,7 +2,7 @@
 @section('content')
 
 <div>
-  <h1 class="bg-danger text-center">Please, only put one element in the center. I'm not that great of a coder !</h1>
+  <h1 class="bg-danger text-center">Only the last element with the filter 'Center' will be considered.</h1>
 </div>
 
 <div class="container d-flex">

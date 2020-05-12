@@ -39,12 +39,14 @@ class WelcomeController extends Controller
         $contactinfo=Contactinfo::find(1);
         $teams=Team::all();
         $centers=$teams->where('filter','Center');
-        $center=$centers->random(1);
+        $center=$centers->last();
         $sides=$teams->where('filter','Side');
         $side=$sides->random(2);
         $servs=Homeservice::all();
 
-        return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready','contactinfo','teams','servs','centers','center','sides','side'));
+        return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices',
+        'about','testimonials','testimonialstitle','ready','contactinfo','teams','servs',
+        'centers','center','sides','side'));
 
     }
 

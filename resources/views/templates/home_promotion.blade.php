@@ -10,7 +10,7 @@
 				</div>
 				<div class="col-md-3">
 					<div class="promo-btn-area">
-						<a href="" class="site-btn btn-2">Browse</a>
+						<a href="{{route('contact')}}" class="site-btn btn-2">Browse</a>
 					</div>
 				</div>
 			</div>
@@ -29,7 +29,7 @@
 					</div>
 					<div class="col-md-3">
 						<div class="promo-btn-area">
-							<a href="" class="site-btn btn-2">{{$ready->button}}</a>
+							<a href="{{route('contact')}}" class="site-btn btn-2">{{$ready->button}}</a>
 						</div>
 					</div>
 				</div>
