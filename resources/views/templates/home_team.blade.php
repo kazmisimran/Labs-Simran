@@ -32,15 +32,35 @@
 					</div>
 				</div>
 				@else 
-					@foreach ($teams as $team)
+					@for($i=0;$i<3;$i++)
+					@if($i==1)
 					<div class="col-sm-4">
 						<div class="member">
-							<img src="{{asset('storage/'.$team->img_path)}}" alt="">
-							<h2>{{$team->name}}</h2>
-							<h3>{{$team->position}}</h3>
+							<img src="{{asset('storage/'.$center[0]->img_path)}}" alt="">
+							<h2>{{$center[0]->name}}</h2>
+							<h3>{{$center[0]->position}}</h3>
 						</div>
 					</div>
-					@endforeach
+					@else
+					@if($i==0)
+					<div class="col-sm-4">
+						<div class="member">
+							<img src="{{asset('storage/'.$side[0]->img_path)}}" alt="">
+							<h2>{{$side[0]->name}}</h2>
+							<h3>{{$side[0]->position}}</h3>
+						</div>
+					</div>
+					@elseif($i==2)
+					<div class="col-sm-4">
+						<div class="member">
+							<img src="{{asset('storage/'.$side[1]->img_path)}}" alt="">
+							<h2>{{$side[1]->name}}</h2>
+							<h3>{{$side[1]->position}}</h3>
+						</div>
+					</div>
+					@endif
+					@endif
+					@endfor
 				@endif
 			</div>
 		</div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Team;
+use App\Http\Requests\TeamRequest;
 
 class TeamController extends Controller
 {
@@ -36,11 +37,12 @@ class TeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TeamRequest $request)
     {
         $team = new Team();
         $team->name=request('name');
         $team->position=request('position');
+        $team->filter=request('filter');
         $team->img_path=request('img') -> store('img');
 
         $team->save();
@@ -78,7 +80,7 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TeamRequest $request, $id)
     {
         $team=Team::find($id);
         if($team!=null){
@@ -86,6 +88,8 @@ class TeamController extends Controller
             $team->img_path=request('img')->store('img');
             $team->name=request('name');
             $team->position=request('position');
+            $team->filter=request('filter');
+
         }
 
         $team->save();
@@ -100,9 +104,9 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        $team=Team::fin($id);
+        $team=Team::find($id);
         Storage::delete($team);
-        $team->dlete();
+        $team->delete();
         return redirect()->back();
     }
 }

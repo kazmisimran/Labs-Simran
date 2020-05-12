@@ -18,6 +18,7 @@ class CreateTeamsTable extends Migration
             $table->string('img_path',100);
             $table->string('name',30);
             $table->string('position',30);
+            $table->string('filter',100);
             $table->timestamps();
         });
     }

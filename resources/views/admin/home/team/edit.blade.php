@@ -21,6 +21,12 @@
         <input type="text" name='position' id='position' value='{{$team->position}}'>
     </div>
 
+    <div>
+        <label for="" class="d-block">Filtre</label>
+        <input type="radio" value= "Side" name="filter"><p class="d-inline mr-5">Side</p>
+        <input type="radio" value= "Center" name="filter"><p class="d-inline mr-5">Center</p>
+    </div>
+
     <button type="submit" class="btn btn-dark">Valider</button>
     </form>
 
