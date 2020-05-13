@@ -9,6 +9,7 @@ use App\Homeservice;
 use App\Featurestitle;
 use App\Contactform;
 use App\Contactinfo;
+use App\Newsletter;
 
 class ServicesController extends Controller
 {
@@ -23,10 +24,11 @@ class ServicesController extends Controller
        $featurestitle= Featurestitle::find(1);
        $contactforms=Contactform::all();
        $contactinfo=Contactinfo::find(1);
+       $newsletters=Newsletter::all();
 
 
 
-        return view('index_services',compact('homemenu','servicesbanner','homeservices','features' ,'featurestitle','featureslefts','featuresrights','contactforms','contactinfo'));
+        return view('index_services',compact('homemenu','servicesbanner','homeservices','features' ,'featurestitle','featureslefts','featuresrights','contactforms','contactinfo','newsletters'));
 
     }
 

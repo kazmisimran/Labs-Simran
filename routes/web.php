@@ -29,9 +29,6 @@ use App\Contactmenu;
 
 
 
-Route::get('/blog.html', function () {
-    return view('index_blog');
-});
 
 Route::get('/blog-post.html', function () {
     return view('index_blogpost');
@@ -49,24 +46,11 @@ Route::get('/admin', function(){return view ('admin.index');})->name('admin.inde
 Route::get('/admin/home', function(){return view ('admin.home.index');});
 Route::get('/admin/services', function(){return view ('admin.services.index');});
 Route::get('/admin/contact' , function(){return view('admin.contact.index');});
+Route::get('admin/newsletter' , function(){return view('admin.newsletter.index');});
 
 
-// //HOME
 
-// Route::get('/' , function () {
-//     $homemenu=Homemenu::find(1);
-//     $carousels=Carousel::all();
-//     $logocarousel=Logocarousel::find(1);
-//     $homeservices=Homeservice::paginate(9);
-//     $about=About::find(1);
-//     $testimonials=Testimonial::all();
-//     $testimonialstitle=Testimonialstitle::find(1);
-//     $ready=Ready::find(1);
-//     $contactforms=Contactform::all();
-//     $contactinfo=Contactinfo::find(1);
 
-//     return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices','about','testimonials','testimonialstitle','ready','contactinfo'));
-// });
 
 //Home
 Route::get('/','WelcomeController@index')->name('home');
@@ -134,12 +118,6 @@ Route::resource('admin/home/team' , 'TeamController');
 //Services
 Route::get('/services' , 'ServicesController@index')->name('services');
 
-//Servicesmenu
-
-// Route::get('admin/home/servicesmenu' , 'ServicesmenuController@edit')->name('servicesmenu');
-
-// Route::post('admin/home/servicesmenu' , 'ServicesmenuController@update')->name('servicesmenu.update');
-
 //Servicesbanner
 
 Route::get('admin/home/servicesbanner' , 'ServicesbannerController@edit')->name('servicesbanner');
@@ -155,14 +133,21 @@ Route::post('admin/home/featurestitle' , 'FeaturestitleController@update')->name
 //Contact
 Route::get('/contact' , 'ContactController@index')->name('contact');
 
-//Contactmenu
-
-// Route::get('admin/contact/contactmenu' , 'ContactmenuController@edit')->name('contactmenu');
-
-// Route::post('admin/contact/contactmenu' , 'ContactmenuController@update')->name('contactmenu.update');
-
 //Contactbanner
 
 Route::get('admin/contact/contactbanner' , 'ContactbannerController@edit')->name('contactbanner');
 
 Route::post('admin/contact/contactbanner' , 'ContactbannerController@update')->name('contactbanner.update');
+
+//Blog
+Route::get('/blog' , 'BlogController@index')->name('blog');
+
+//Blogbanner
+
+Route::get('admin/blog/blogbanner' , 'BlogbannerController@edit')->name('blogbanner');
+Route::get('admin/blog/blogbanner' , 'BlogbannerController@update')->name('blogbanner.update');
+
+//Newsletter
+Route::post('/newsletter','NewsletterController@store')->name('newsletter.store');
+Route::get('/admin/newsletter','NewsletterController@index')->name('newsletter.index');
+Route::delete('/admin/newsletter/{id}','NewsletterController@destroy')->name('newsletter.destroy');
