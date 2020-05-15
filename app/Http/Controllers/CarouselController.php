@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Carousel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\CarouselRequest;
 
 
 
@@ -42,7 +43,7 @@ class CarouselController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CarouselRequest $request)
     {
         $carousel = new Carousel();
         
@@ -85,7 +86,7 @@ class CarouselController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CarouselRequest $request, $id)
     {
         $carousel=Carousel::find($id);
         if($carousel!=null){

@@ -15,6 +15,7 @@ use App\Ready;
 use App\Contactform;
 use App\Contactinfo;
 use App\Team;
+use App\Footer;
 use Illuminate\Pagination\Paginator;
 
 
@@ -43,10 +44,11 @@ class WelcomeController extends Controller
         $sides=$teams->where('filter','Side');
         $side=$sides->random(2);
         $servs=Homeservice::all();
+        $footer=Footer::find(1);
 
         return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices',
         'about','testimonials','testimonialstitle','ready','contactinfo','teams','servs',
-        'centers','center','sides', 'side'));
+        'centers','center','sides', 'side','footer'));
 
     }
 

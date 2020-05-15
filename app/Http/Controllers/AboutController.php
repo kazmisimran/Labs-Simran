@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\About;
+use App\Http\Requests\AboutRequest;
 use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
@@ -71,7 +72,7 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(AboutRequest $request)
     {
         $about = About::find(1);
        

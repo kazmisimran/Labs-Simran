@@ -8,7 +8,10 @@
         @csrf
         <div>
             <label for="" class="w-25">Title :</label>
-            <input type="text" name="title" id="" >
+            <input type="text" name="title" id="" class="@error('title')is-invalid @enderror" value="{{old('title')}}">
+            @error('title')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
         </div>
 
      
@@ -20,7 +23,10 @@
         @csrf
         <div>
             <label for="" class="w-25">Title</label>
-            <input type="text" name="title" id="" value="{{$testimonialstitle->title}}">
+            <input type="text" name="title" id=""  class="@error('title')is-invalid @enderror" value="{{$testimonialstitle->title}}">
+            @error('title')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
         </div>
 
 

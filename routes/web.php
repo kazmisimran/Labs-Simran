@@ -149,6 +149,13 @@ Route::get('/blog' , 'BlogController@index')->name('blog');
 Route::get('admin/blog/blogbanner' , 'BlogbannerController@edit')->name('blogbanner');
 Route::post('admin/blog/blogbanner' , 'BlogbannerController@update')->name('blogbanner.update');
 
+
+//Footer
+Route::get('admin/footer' , 'FooterController@edit')->name('footer');
+Route::post('admin/footer' , 'FooterController@update')->name('footer.update');
+
+
+
 //Newsletter
 Route::post('/newsletter','NewsletterController@store')->name('newsletter.store');
 Route::get('/admin/newsletter','NewsletterController@index')->name('newsletter.index');
@@ -156,3 +163,5 @@ Route::delete('/admin/newsletter/{id}','NewsletterController@destroy')->name('ne
 
 //Blog Posts
 Route::resource('admin/blog/post' , 'PostController');
+
+

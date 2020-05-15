@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Logocarousel;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\LogocarouselRequest;
 
 
 class LogocarouselController extends Controller
@@ -72,7 +73,7 @@ class LogocarouselController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(LogocarouselRequest $request)
     {
         $logocarousel = logocarousel::find(1);
        

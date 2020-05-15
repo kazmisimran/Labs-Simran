@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Homemenu;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\HomemenuRequest;
 
 
 class HomemenuController extends Controller
@@ -72,7 +73,7 @@ class HomemenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(HomemenuRequest $request)
     {
         $homemenu = homemenu::find(1);
        

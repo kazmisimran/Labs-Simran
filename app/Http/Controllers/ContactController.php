@@ -7,6 +7,7 @@ use App\Homemenu;
 use App\Contactbanner;
 use App\Contactform;
 use App\Contactinfo;
+use App\Footer;
 
 class ContactController extends Controller
 {
@@ -16,9 +17,10 @@ class ContactController extends Controller
         $contactbanner = Contactbanner::find(1);
         $contactforms=Contactform::all();
         $contactinfo=Contactinfo::find(1);
+        $footer=Footer::find(1);
  
 
 
-        return view('index_contact',compact('homemenu','contactbanner','contactforms','contactinfo'));
+        return view('index_contact',compact('homemenu','contactbanner','contactforms','contactinfo','footer'));
     }
 }

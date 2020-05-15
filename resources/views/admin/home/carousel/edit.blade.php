@@ -11,7 +11,11 @@
         @method('put')
     <div>
         <label for="" class="w-25">Image</label>
-        <input type="file" name='img' id='img' >
+        <input type="file" name='img' id='img' class="@error('img')is-invalid @enderror" >
+        @error('img')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+
         <img src="{{asset('storage/'.$carousel->img_path)}}" alt="" class="w-25">
     </div>
  

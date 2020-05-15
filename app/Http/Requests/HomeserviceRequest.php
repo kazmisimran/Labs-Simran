@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TeamRequest extends FormRequest
+class HomeserviceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,18 @@ class TeamRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'icon'=>'required',
+            'title'=>'required',
+            'description'=>'required',
         ];
     }
 
-    public function messages(){
+    public function messages()
+    {
         return[
-            'name.required'=>'Name is required'
+            'icon.required'=>'Icon required',
+            'title.required'=>'Title required',
+            'description.required'=>'Description required',
         ];
     }
 }

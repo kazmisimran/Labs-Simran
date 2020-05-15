@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Testimonialstitle;
+use App\Http\Requests\TestimonialstitleRequest;
 use Illuminate\Support\Facades\Storage;
 
 class TestimonialstitleController extends Controller
@@ -71,7 +72,7 @@ class TestimonialstitleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(TestimonialstitleRequest $request)
     {
         $testimonialstitle = Testimonialstitle::find(1);
        

@@ -7,6 +7,10 @@
     <li><a href="{{route('contactbanner')}}">Banner</a></li>
     <li><a href="home/contactform">Contact form</a></li>
     <li><a href="{{route('contactinfo')}}">Contact info</a></li>
+    <li><a href="{{route('footer')}}">Footer</a></li>
+
+
+
 
 
     {{-- 

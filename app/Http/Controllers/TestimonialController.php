@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Testimonial;
+use App\Http\Requests\TestimonialRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
@@ -42,7 +43,7 @@ class TestimonialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TestimonialRequest $request)
     {
         $testimonial = new Testimonial();
         $testimonial->text = request('text');
@@ -90,7 +91,7 @@ class TestimonialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TestimonialRequest $request, $id)
     {
         $testimonial=Testimonial::find($id);
         if($testimonial!=null){

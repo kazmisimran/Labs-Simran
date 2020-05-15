@@ -9,29 +9,47 @@
         @csrf
         <div>
             <label for="" class="w-25">Title :</label>
-            <input type="text" name="title" id="" >
+            <input type="text" name="title" id="" class="@error('title')is-invalid @enderror" value="{{old('title')}}">
+            @error('title')
+                <span class="text-danger">{{$message}}</span>
+            @enderror
         </div>
 
         <div>
             <label for=""  class="w-25">Text 1 :</label>
-            <input type="text" name="text1" id="" >
+            <input type="text" name="text1" id="" class="@error('text1')is-invalid @enderror"  value="{{old('text1')}}">
+            @error('text1')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
         </div>
 
 
         <div>
             <label for=""  class="w-25">Text 2 :</label>
-            <input type="text" name="text2" id="" >
+            <input type="text" name="text2" id=""  class="@error('text2')is-invalid @enderror"  value="{{old('text2')}}">
+            @error('text1')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
         </div>
         
 
         <div>
             <label for=""  class="w-25">Button</label>
-            <input type="text" name="button" id="" >
+            <input type="text" name="button" id="" class="@error('button')is-invalid @enderror"  value="{{old('button')}}">
+            @error('button')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
         </div>
 
         <div>
             <label for=""  class="w-25">Video link :</label>
-            <input type="link" name="link" id="" >
+            <input type="link" name="link" id="" class="@error('link')is-invalid @enderror"  value="{{old('link')}}">
+            @error('link')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
 
         </div>
 
@@ -44,27 +62,47 @@
         @csrf
         <div>
             <label for="" class="w-25">Title</label>
-            <input type="text" name="title" id="" value="{{$about->title}}">
+            <input type="text" name="title" id=""  class="@error('ttitle')is-invalid @enderror" value="{{$about->title}}">
+            @error('title')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
         </div>
 
         <div>
             <label for=""  class="w-25">Text 1</label>
-            <input type="text" name="text1" id="" value="{{$about->text1}}">
+            <input type="text" name="text1" id=""  class="@error('text1')is-invalid @enderror" value="{{$about->text1}}">
+            @error('text1')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
         </div>
 
         <div>
             <label for=""  class="w-25">Text 2</label>
-            <input type="text" name="text2" id="" value="{{$about->text2}}">
+            <input type="text" name="text2" id=""  class="@error('text2')is-invalid @enderror" value="{{$about->text2}}">
+            @error('text2')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
         </div>
 
         <div>
             <label for=""  class="w-25">Button</label>
-            <input type="text" name="button" id="" value="{{$about->button}}">
+            <input type="text" name="button" id=""  class="@error('button')is-invalid @enderror" value="{{$about->button}}">
+            @error('button')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
         </div>
 
         <div>
             <label for=""  class="w-25">Video link</label>
-            <input type="link" name="link" id="" >
+            <input type="link" name="link" id=""  class="@error('link')is-invalid @enderror" value='{{$about->link}}'>
+            @error('link')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
 
         </div>
 

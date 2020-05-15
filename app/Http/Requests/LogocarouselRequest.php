@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TeamRequest extends FormRequest
+class LogocarouselRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,18 @@ class TeamRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'logo'=>'required',
+            'caption'=>'required|max:50',
         ];
     }
 
-    public function messages(){
+    public function messages()
+    {
         return[
-            'name.required'=>'Name is required'
+            'logo.required'=>'Logo required',
+            'caption.required'=>'Caption required',
+            'caption.max'=>'Maximum 50 caractères',
         ];
+
     }
 }

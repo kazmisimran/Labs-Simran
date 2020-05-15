@@ -17,11 +17,17 @@
  
     <div>
         <label for="" class="w-25">Title</label>
-    <input type="text" name="title" id="title" value="{{$homeservice->title}}">
+        <input type="text" name="title" id="title" value="{{$homeservice->title}}" class="@error('title')is-invalid @enderror">
+        @error('title')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
     </div>
     <div>
         <label for="" class="w-25">Description</label>
-    <input type="text" name='description' id='description' value="{{$homeservice->description}}">
+        <input type="text" name='description' id='description' value="{{$homeservice->description}}" class="@error ('description')@enderror">
+        @error('description')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
     </div>
 
 
@@ -37,7 +43,10 @@
         <div><input type="radio" value="flaticon-012-cube" name="icon"><i class="flaticon-012-cube h2"></i></div>
     </div>
 
-    <button type="submit" class="btn btn-dark my-3">Valider</button>
+    @error('icon')
+    <span class="text-danger">{{$message}}</span>
+    @enderror
+    <button type="submit" class="btn btn-dark my-3 d-block">Valider</button>
     </form>
 
 </div>

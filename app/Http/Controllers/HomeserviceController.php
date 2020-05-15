@@ -6,12 +6,7 @@ use Illuminate\Http\Request;
 use App\Homeservice;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
-
-
-
-
-
-
+use App\Http\Requests\HomeserviceRequest;
 
 class HomeserviceController extends Controller
 {
@@ -48,7 +43,7 @@ class HomeserviceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HomeserviceRequest $request)
     {
         $homeservice = new Homeservice();
         $homeservice->title = request('title');
@@ -92,7 +87,7 @@ class HomeserviceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(HomeserviceRequest $request, $id)
     {
         $homeservice=Homeservice::find($id);
         if($homeservice!=null){

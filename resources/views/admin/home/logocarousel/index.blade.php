@@ -8,11 +8,26 @@
     <form action="{{route('logocarousel.update')}}" method="post" enctype="multipart/form-data" class="container">
         @csrf
         <div>
-            <label for="" class="w-25">Logo</label>
-            <input type="file" name="logo" id="logo" >
+            <div class="form-group">
+                <label for="" class="w-25">Logo</label>
+                <input type="file" name="logo" id="logo" class="@error('logo')is-invalid @enderror" value="{{old('logo')}}">
+                @error('logo')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
 
-            <label for="" class="w-25">Lien 1</label>
-            <input type="text" name="caption" id="caption" >
+            <div class="form-group">
+                <label for="" class="w-25">Caption</label>
+                <input type="text" name="caption" id="caption" class="@error('caption')is-invalid @enderror" value="{{old('caption')}}">
+                @error('caption')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+
+
+
+
+
 
         </div>
 
@@ -25,11 +40,22 @@
         @csrf
 
         <div>
-            <label for="" class="w-25">Logo</label>
-            <input type="file" name="logo" id="logo" value="{{$logocarousel->img_path}}">
+            <div class="form-group">
+                <label for="" class="w-25">Logo</label>
+                <input type="file" name="logo" id="logo" class="@error('logo')is-invalid @enderror" value="{{$logocarousel->img_path}}">
+                @error('logo')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
 
-            <label for="" class="w-25">Lien 1</label>
-            <input type="text" name="caption" id="caption" value="{{$logocarousel->caption}}">
+            </div>
+
+            <div class="form-group">
+                <label for="" class="w-25">Caption</label>
+                <input type="text" name="caption" id="caption" class="@error('caption')is-invalid @enderror" value="{{$logocarousel->caption}}">
+                @error('caption')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
         </div>
 
 

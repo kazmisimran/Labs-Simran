@@ -14,11 +14,19 @@
   
     <div>
         <label for="" class="w-25">Title</label>
-    <input type="text" name="title" id="title">
+        <input type="text" name="title" id="title" class="@error('title')is-invalid @enderror" value="{{old('title')}}">
+            @error('title')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
     </div>
     <div>
         <label for="" class="w-25">Description</label>
-        <input type="text" name='description' id='description' >
+        <input type="text" name='description' id='description'  class="@error('description')is-invalid @enderror" value="{{old('description')}}">
+            @error('description')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
     </div>
 
     <div class="my-5 d-flex justify-content-around ">
@@ -32,10 +40,10 @@
         <div><input type="radio" value="flaticon-043-sketch" name="icon"><i class="flaticon-043-sketch h2"></i></div>
         <div><input type="radio" value="flaticon-012-cube" name="icon"><i class="flaticon-012-cube h2"></i></div>
     </div>
-
-   
-   
-    <button type="submit" class="btn btn-dark my-3">Valider</button>
+    @error('icon')
+    <span class="text-danger">{{$message}}</span>
+    @enderror
+    <button type="submit" class="btn btn-dark my-3 d-block">Valider</button>
     </form>
 
 </div>

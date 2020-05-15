@@ -8,21 +8,50 @@
     <form action="{{route('homemenu.update')}}" method="post" enctype="multipart/form-data" class="container">
         @csrf
         <div>
-            <label for="" class="w-25">Logo</label>
-            <input type="file" name="logo" id="logo" >
+            <div class="form-group">
+                <label for="" class="w-25">Logo</label>
+                <input type="file" name="logo" id="logo" class="@error('logo') is-invalid @enderror" value="{{old('logo')}}" >
+                @error('logo')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
+    
+            </div>
 
-            <label for="" class="w-25">Lien 1</label>
-            <input type="text" name="lien1" id="lien1" >
+            <div class="form-group">
+                <label for="" class="w-25">Lien 1</label>
+                <input type="text" name="lien1" id="lien1" class="@error('lien1')is-invalid @enderror" value="{{old('lien1')}}">
+                @error('lien1')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
 
-            <label for="" class="w-25">Lien 2</label>
-            <input type="text" name="lien2" id="lien2" >
+            <div class="form-group">
+                <label for="" class="w-25">Lien 2</label>
+                <input type="text" name="lien2" id="lien2" class="@error('lien2')is-invalid @enderror" value="{{old('lien2')}}">
+                @error('lien2')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
 
-            <label for="" class="w-25">Lien 3</label>
-            <input type="text" name="lien3" id="lien3" >
+            </div>
 
-            <label for="" class="w-25">Lien 4</label>
-            <input type="text" name="lien4" id="lien4" >
+            <div class="form-group">
+                <label for="" class="w-25">Lien 3</label>
+                <input type="text" name="lien3" id="lien3" class="@error('lien3')is-invalid @enderror" value="{{old('lien3')}}">
+                @error('lien3')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
 
+
+            </div>
+
+            <div class="form-group">
+                <label for="" class="w-25">Lien 4</label>
+                <input type="text" name="lien4" id="lien4" class="@error('lien4')is-invalid @enderror" value="{{old('lien4')}}">
+                @error('lien4')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+
+            </div>
         </div>
 
 
@@ -34,21 +63,52 @@
         @csrf
 
         <div>
-            <label for="" class="w-25">Logo</label>
-            <input type="file" name="logo" id="logo" value="{{$homemenu->img_path}}">
+            <div class="form-group">
+                <label for="" class="w-25">Logo</label>
+                <input type="file" name="logo" id="logo"  class="@error('logo') is-invalid @enderror"  value="{{$homemenu->img_path}}">
+                @error('logo')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
 
-            <label for="" class="w-25">Lien 1</label>
-        <input type="text" name="lien1" id="lien1" value="{{$homemenu->lien1}}">
+            </div>
 
-            <label for="" class="w-25">Lien 2</label>
-            <input type="text" name="lien2" id="lien2" value="{{$homemenu->lien1}}">
+            <div class="form-group">
+                <label for="" class="w-25">Lien 1</label>
+                <input type="text" name="lien1" id="lien1" class="@error('lien1')is-invalid @enderror" value="{{$homemenu->lien1}}">
+                @error('lien1')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
 
-            <label for="" class="w-25">Lien 3</label>
-            <input type="text" name="lien3" id="lien3" value="{{$homemenu->lien1}}">
+            </div>
 
-            <label for="" class="w-25">Lien 4</label>
-            <input type="text" name="lien4" id="lien4" value="{{$homemenu->lien1}}" >
+            <div class="form-group">
+                <label for="" class="w-25">Lien 2</label>
+                <input type="text" name="lien2" id="lien2" class="@error('lien2')is-invalid @enderror" value="{{$homemenu->lien2}}">
+                @error('lien2')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
 
+            </div>    
+
+            <div class="form-group">
+                <label for="" class="w-25">Lien 3</label>
+                <input type="text" name="lien3" id="lien3" class="@error('lien3')is-invalid @enderror" value="{{$homemenu->lien3}}">
+                @error('lien3')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+
+            </div>    
+
+            <div class="form-group">
+                <label for="" class="w-25">Lien 4</label>
+                <input type="text" name="lien4" id="lien4" class="@error('lien4')is-invalid @enderror" value="{{$homemenu->lien4}}" >
+                @error('lien4')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+
+
+            </div>    
+            
         </div>
 
 
