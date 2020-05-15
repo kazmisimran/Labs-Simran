@@ -1,7 +1,3 @@
-
-
-
-
 	<!-- page section -->
 	<div class="page-section spad">
 		<div class="container">

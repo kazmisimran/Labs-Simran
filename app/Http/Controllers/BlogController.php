@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Blogbanner;
 use App\Newsletter;
-
 class BlogController extends Controller
 {
     public function index(){
