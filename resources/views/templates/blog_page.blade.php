@@ -3,7 +3,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-sm-7 blog-posts">
-					<!-- Post item -->
+					@if(count($posts)==0)
+										<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
 							<img src="img/blog/blog-2.jpg" alt="">
@@ -63,6 +64,30 @@
 							<a href="blog-post.html" class="read-more">Read More</a>
 						</div>
 					</div>
+				@else
+					@foreach($posts as $post)
+					<div class="post-item">
+						<div class="post-thumbnail">
+							<img src="{{asset('storage/'.$post->img_path)}}" alt="">
+							<div class="post-date">
+								<h2>{{$post->day}}</h2>
+								<h3>{{$post->month}} {{$post->year}}</h3>
+							</div>
+						</div>
+						<div class="post-content">
+							<h2 class="post-title">Just a simple blog post</h2>
+							<div class="post-meta">
+								<a href="">Loredana Papp</a>
+								<a href="">Design, Inspiration</a>
+								<a href="">2 Comments</a>
+							</div>
+							<p>{{$post->text}}</p>
+							<a href="blog-post.html" class="read-more">Read More</a>
+						</div>
+					</div>
+					@endforeach
+				@endif
+
 					<!-- Pagination -->
 					<div class="page-pagination">
 						<a class="active" href="">01.</a>
