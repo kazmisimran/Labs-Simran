@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ready;
+use App\Http\Requests\ReadyRequest;
 
 class ReadyController extends Controller
 {
@@ -15,7 +16,7 @@ class ReadyController extends Controller
 
     }
 
-    public function update(Request $request)
+    public function update(ReadyRequest $request)
     {
         $ready = Ready::find(1);
        

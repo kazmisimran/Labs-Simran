@@ -8,7 +8,11 @@
         @csrf 
     <div>
         <label for="" class="w-25">Image</label>
-        <input type="file" name='img' id='img'>
+        <input type="file" name='img' id='img' class=" @error('img')is-invalid @enderror">
+        @error('img')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+
     </div>
 
     <div>
@@ -20,13 +24,21 @@
     </div>
     <div>
         <label for="" class="w-25">Position</label>
-        <input type="text" name='position' id='position'>
+        <input type="text" name='position' id='position' class=" @error('position')is-invalid @enderror">
+        @error('position')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+
     </div>
 
     <div>
         <label for="" class="d-block">Filtre</label>
         <input type="radio" value= "Side" name="filter"><p class="d-inline mr-5">Side</p>
         <input type="radio" value= "Center" name="filter"><p class="d-inline mr-5">Center</p>
+        @error('filter')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+
     </div>
 
     <button type="submit" class="btn btn-dark">Valider</button>

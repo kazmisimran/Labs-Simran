@@ -13,6 +13,7 @@
       <tr>
         <th scope="col">Image</th>
         <th scope="col">Title</th>
+        <th scope="col">Date</th>
         <th scope="col">Content</th>
         <th scope="col">Settings</th>
       </tr>
@@ -22,6 +23,7 @@
         <tr>
         <td><img src="{{asset('storage/'.$post->img_path)}}" alt="" class="w-25"></td>
         <td>{{$post->title}}</td>
+        <td>{{$post->day}} {{$post->month}}  {{$post->year}}</td>
         <td>{{$post->content}}</td>
 
 

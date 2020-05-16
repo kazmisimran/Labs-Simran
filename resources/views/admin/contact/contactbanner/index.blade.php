@@ -9,15 +9,23 @@
         <div>
 
             <label for="" class="w-25">Title</label>
-            <input type="text" name="title" id="title" >
+            <input type="text" name="title" id="title" class="@error('title')is-invalid @enderror">
+            @error('title')
+                <span class="text-danger">{{$message}}</span>
+            @enderror
 
             <label for="" class="w-25">bread 1</label>
-            <input type="text" name="bread1" id="bread1" >
+            <input type="text" name="bread1" id="bread1" class="@error('bread1')is-invalid @enderror" >
+            @error('bread1')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
 
             <label for="" class="w-25">bread 2</label>
-            <input type="text" name="bread2" id="bread2" >
-
-
+            <input type="text" name="bread2" id="bread2" class="@error('bread2')is-invalid @enderror">
+            @error('bread2')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
 
         </div>
 
@@ -29,15 +37,28 @@
     <form action="{{route('contactbanner.update')}}" method="post"   enctype="multipart/form-data" class="container">
         @csrf
 
-        <div>
+        <div class="form-control">
             <label for="" class="w-25">Ttile</label>
-            <input type="text" name="title" id="title" value="{{$contactbanner->title}}">
+            <input type="text" name="title" id="title" value="{{$contactbanner->title}}" class="@error('title')is-invalid @enderror">
+            @error('title')
+                <span class="text-danger">{{$message}}</span>
+            @enderror
+
 
             <label for="" class="w-25">bread 1</label>
-            <input type="text" name="bread1" id="bread1" value="{{$contactbanner->bread1}}">
+            <input type="text" name="bread1" id="bread1" value="{{$contactbanner->bread1}}" class="@error('bread1')is-invalid @enderror">
+            @error('bread1')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
+
 
             <label for="" class="w-25">bread 2</label>
-            <input type="text" name="bread2" id="bread2" value="{{$contactbanner->bread2}}">
+            <input type="text" name="bread2" id="bread2" value="{{$contactbanner->bread2}}" class="@error('bread2')is-invalid @enderror">
+            @error('bread2')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+
 
 
         </div>

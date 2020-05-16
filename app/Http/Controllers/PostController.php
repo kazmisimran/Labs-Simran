@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -37,16 +39,19 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        
         $post = new Post();
         $post->title=request('title');
-        $post->content=request('content');
+        $post->day=request('day');
+        $post->month=request('month');
+        $post->year=request('year');
+        $post->text=request('text');
         $post->img_path=request('img') -> store('img');
 
         $post->save();
         return redirect()->route('post.index');
+
     }
 
     /**
@@ -81,19 +86,23 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TeamRequest $request, $id)
+    public function update(PostRequest $request, $id)
     {
         $post=Post::find($id);
         if($post!=null){
             Storage::delete($post->img_path);
-            $post->img_path=request('img')->store('img');
             $post->title=request('title');
-            $post->content=request('content');
-
+            $post->day=request('day');
+            $post->month=request('month');
+            $post->year=request('year');
+            $post->text=request('text');
+            $post->img_path=request('img') -> store('img');
+    
         }
 
         $post->save();
         return redirect() -> route('post.index');
+
     }
 
     /**
@@ -108,5 +117,6 @@ class PostController extends Controller
         Storage::delete($post);
         $post->delete();
         return redirect()->back();
+
     }
 }

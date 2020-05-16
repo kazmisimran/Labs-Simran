@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Footer;
+use App\Http\Requests\FooterRequest;
 
 class FooterController extends Controller
 {
@@ -22,7 +23,7 @@ class FooterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(FooterRequest $request)
     {
         $footer = Footer::find(1);
        

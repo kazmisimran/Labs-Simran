@@ -42,13 +42,18 @@ class WelcomeController extends Controller
         $centers=$teams->where('filter','Center');
         $center=$centers->last();
         $sides=$teams->where('filter','Side');
-        $side=$sides->random(2);
         $servs=Homeservice::all();
         $footer=Footer::find(1);
+                if(count($sides)>=2){
+                    $side=$sides->random(2);
+                    return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices',
+                    'about','testimonials','testimonialstitle','ready','contactinfo','teams','servs',
+                    'centers','center','sides', 'side','footer'));
+                }
 
         return view('index_home' , compact('homemenu','carousels','logocarousel','homeservices',
         'about','testimonials','testimonialstitle','ready','contactinfo','teams','servs',
-        'centers','center','sides', 'side','footer'));
+        'centers','center','sides','footer'));
 
     }
 

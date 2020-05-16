@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contactbanner;
+use App\Http\Requests\BannerRequest;
+
 
 class ContactbannerController extends Controller
 {
@@ -15,7 +17,7 @@ class ContactbannerController extends Controller
 
     }
 
-    public function update()
+    public function update(BannerRequest $request)
     {
         $contactbanner = contactbanner::find(1);
        

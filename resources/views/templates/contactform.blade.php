@@ -32,14 +32,28 @@
 						@csrf 
 						<div class="row">
 							<div class="col-sm-6">
-								<input type="text" name="name" placeholder="Your name">
+								<input type="text" name="name" placeholder="Your name" class="@error('name')is-invalid @enderror" value="{{old('name')}}">
+								@error('name')
+								<span class="text-danger">{{$message}}</span>
+								@enderror
 							</div>
 							<div class="col-sm-6">
-								<input type="text" name="email" placeholder="Your email">
+								<input type="text" name="email" placeholder="Your email" class="@error('email')is-invalid @enderror" value="{{old('email')}}">
+								@error('email')
+								<span class="text-danger">{{$message}}</span>
+								@enderror
 							</div>
 							<div class="col-sm-12">
-								<input type="text" name="subject" placeholder="Subject">
-								<textarea name="message" placeholder="Message"></textarea>
+								<input type="text" name="subject" placeholder="Subject" class="@error('subject')is-invalid @enderror" value="{{old('subject')}}">
+								@error('subject')
+								<span class="text-danger">{{$message}}</span>
+								@enderror
+
+								<textarea name="message" placeholder="Message"  class="@error('message')is-invalid @enderror" value="{{old('message')}}"></textarea>
+								@error('message')
+								<span class="text-danger">{{$message}}</span>
+								@enderror
+
 								<button class="site-btn">send</button>
 							</div>
 						</div>

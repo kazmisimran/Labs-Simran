@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Servicesbanner;
+use App\Http\Requests\BannerRequest;
+
 
 class ServicesbannerController extends Controller
 {
@@ -15,7 +17,7 @@ class ServicesbannerController extends Controller
 
     }
 
-    public function update()
+    public function update(BannerRequest $request)
     {
         $servicesbanner = servicesbanner::find(1);
        

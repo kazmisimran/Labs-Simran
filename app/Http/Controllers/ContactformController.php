@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contactform;
+use App\Http\Requests\ContactformRequest;
 class ContactformController extends Controller
 {
     
@@ -15,7 +16,7 @@ class ContactformController extends Controller
         return view('admin.home.contactform.index', compact('contactforms'));
     }
 
-    public function store(Request $request){
+    public function store(ContactformRequest $request){
 
 
     $contactform= new Contactform();

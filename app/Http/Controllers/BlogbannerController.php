@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blogbanner;
+use App\Http\Requests\BannerRequest;
 
 class BlogbannerController extends Controller
 {
@@ -15,7 +16,7 @@ class BlogbannerController extends Controller
 
     }
 
-    public function update()
+    public function update(BannerRequest $request)
     {
         $blogbanner = Blogbanner::find(1);
        

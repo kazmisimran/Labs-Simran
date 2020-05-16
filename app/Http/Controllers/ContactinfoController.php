@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Contactinfo;
+use App\Http\Requests\ContactinfoRequest;
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class ContactinfoController extends Controller
 
     }
 
-    public function update()
+    public function update(Contactinfo $request)
     {
         $contactinfo= Contactinfo::find(1);
         if(empty($contactinfo)){
